@@ -1,5 +1,6 @@
 package com.brickupdesafio.desafiotarefas.domain.tarefa;
 
+import com.brickupdesafio.desafiotarefas.domain.usuario.Status;
 import com.brickupdesafio.desafiotarefas.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +12,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
-@EqualsAndHashCode(of="id")
 @NoArgsConstructor
 public class Tarefa {
     @Id
@@ -22,10 +22,25 @@ public class Tarefa {
     private String descricao;
     private LocalDateTime dataCriacao;
     private LocalDateTime dataConclusao;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     private String foto;
 
     @ManyToOne
     private Usuario usuario;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tarefa tarefa = (Tarefa) o;
+        return id != null && id.equals(tarefa.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 31;
+    }
 }
