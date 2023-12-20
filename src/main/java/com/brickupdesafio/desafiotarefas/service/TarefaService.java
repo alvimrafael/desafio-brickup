@@ -1,7 +1,7 @@
 package com.brickupdesafio.desafiotarefas.service;
 
+import com.brickupdesafio.desafiotarefas.domain.tarefa.Status;
 import com.brickupdesafio.desafiotarefas.domain.tarefa.Tarefa;
-import com.brickupdesafio.desafiotarefas.domain.usuario.Status;
 import com.brickupdesafio.desafiotarefas.repository.TarefaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

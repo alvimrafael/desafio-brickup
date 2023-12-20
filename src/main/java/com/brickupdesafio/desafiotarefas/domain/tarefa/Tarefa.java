@@ -1,6 +1,5 @@
 package com.brickupdesafio.desafiotarefas.domain.tarefa;
 
-import com.brickupdesafio.desafiotarefas.domain.usuario.Status;
 import com.brickupdesafio.desafiotarefas.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
